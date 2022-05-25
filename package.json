@@ -1,0 +1,23 @@
+{
+  "name": "@zk-chess/monorepo",
+  "private": true,
+  "repository": "https://github.com/naps62/zk-chess",
+  "author": "Miguel Palhas <mpalhas@gmail.com>",
+  "license": "MIT",
+  "workspaces": {
+    "packages": [
+      "packages/circuits"
+    ],
+    "nohoist": [
+      "**/@openzeppelin/**",
+      "**/@nomiclabs/**",
+      "**/@typechain/**",
+      "**/typechain/**",
+      "**/typescript/**",
+      "**/ts-node/**",
+      "**/mocha/**",
+      "@typescript-eslint/**",
+      "concurrently"
+    ]
+  }
+}
