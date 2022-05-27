@@ -1,0 +1,11 @@
+circuits:
+  - any: ["packages/circuits/**/*"]
+
+contracts:
+  - any: ["packages/contracts/**/*"]
+
+frontend:
+  - any: ["packages/frontend/**/*"]
+
+docs:
+  - any: ["**/*.md"]
