@@ -1,8 +1,8 @@
 {
-  "name": "@zk-chess/circuits",
+  "name": "@zk-game/circuits",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/naps62/zk-chess",
+  "repository": "https://github.com/naps62/zk-game",
   "author": "Miguel Palhas <mpalhas@gmail.com>",
   "license": "MIT",
   "devDependencies": {
