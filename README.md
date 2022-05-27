@@ -1,1 +1,1 @@
-# ZK Chess
+# ZK Game
