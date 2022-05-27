@@ -5,5 +5,4 @@ typechain-types
 artifacts
 cache
 deployments/localhost
-lib
 src/contracts/verifiers

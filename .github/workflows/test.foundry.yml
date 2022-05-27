@@ -1,0 +1,40 @@
+name: Test contracts (foundry)
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - "*"
+    paths:
+      - "src/contracts/**/*.sol"
+      - "test/foundry/**/*.sol"
+      - "foundry.toml"
+      - "remappings.txt"
+  pull_request:
+    types: [opened, synchronize]
+    path:
+      - "src/contracts/**/*.sol"
+      - "test/foundry/**/*.sol"
+      - "foundry.toml"
+      - "remappings.txt"
+
+jobs:
+  foundry-test-suite:
+    runs-on: ubuntu-latest
+
+    env:
+      FORCE_COLOR: true
+      REPORT_GAS: true
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: recursive
+
+      - uses: extractions/setup-just@v1
+      - uses: foundry-rs/foundry-toolchain@v1
+        with:
+          version: nightly
+
+      - run: forge test -vvv
