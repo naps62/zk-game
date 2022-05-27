@@ -7,13 +7,17 @@ on:
     tags:
       - "*"
     paths:
-      - "src/circuits/**/*.circom"
-      - "test/circuits/**/*.ts"
+      - "src/contracts/**/*.sol"
+      - "test/foundry/**/*.sol"
+      - "foundry.toml"
+      - "remappings.txt"
   pull_request:
     types: [opened, synchronize]
     path:
-      - "src/circuits/**/*.circom"
-      - "test/circuits/**/*.ts"
+      - "src/contracts/**/*.sol"
+      - "test/foundry/**/*.sol"
+      - "foundry.toml"
+      - "remappings.txt"
 
 jobs:
   foundry-test-suite:
@@ -25,11 +29,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: extractions/setup-just@v1
-      - uses: actions/setup-node@v3
         with:
-          node-version: "16"
-          cache: "yarn"
+          submodules: recursive
 
-      - run: yarn install --immutable
-      - run: yarn test:contracts
+      - uses: extractions/setup-just@v1
+      - uses: foundry-rs/foundry-toolchain@v1
+        with:
+          version: nightly
+
+      - run: forge test -vvv
