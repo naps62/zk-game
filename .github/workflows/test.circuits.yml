@@ -31,6 +31,6 @@ jobs:
           node-version: "16"
           cache: "yarn"
 
-      - run: yarn install --immutable
       # TODO make this work
-      - run: true # yarn test:circuits
+      # - run: yarn install --immutable
+      # - run: # yarn test:circuits
