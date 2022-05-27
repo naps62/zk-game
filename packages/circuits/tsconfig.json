@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es2018",
+    "target": "es2020",
     "module": "commonjs",
     "strict": true,
     "esModuleInterop": true,
@@ -12,7 +12,9 @@
     "moduleResolution": "node",
     "isolatedModules": true,
     "outDir": "dist",
-    "baseUrl": "."
+    "baseUrl": ".",
+    "typeRoots": ["./node_modules/@types", "./src/@types/"],
+    "types": ["mocha", "circom_tester", "ffjavascript"]
   },
-  "include": ["./scripts", "./test", "./decs.d.ts"]
+  "include": ["./src", "./test"]
 }
