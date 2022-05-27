@@ -1,0 +1,10 @@
+[default]
+src = 'src/contracts'
+test = 'test/foundry'
+libs = ['src/contracts/libs']
+out = 'out'
+libs = ['lib']
+gas_reports = ["*"]
+
+cache_path = 'build/foundry/cache'
+out = 'build/foundry/out'

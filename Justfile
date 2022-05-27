@@ -1,22 +1,23 @@
 set positional-arguments
 
-build_dir := "./build"
-verifier_dir := "./verifiers"
+build_dir := "./build/circom"
+verifier_dir := "./src/contracts/verifiers"
 
 test:
-  yarn run mocha
+  yarn run test
 
-all:
+circom-compile:
   just compile Hello
-  # TODO add other circuits
 
 #
 # Circom compilation
 #
+
+foo := if `[ $(stat -c %Y src/circuits) -gt $(stat -c %Y) ]` == `1` { "Good" } else { "Bad" }
 @compile c: build-dir powers-of-tau
   echo -n Compiling {{c}}.circom...
   mkdir -p {{build_dir}}/{{c}}
-  circom src/{{c}}.circom --r1cs --wasm --sym --output {{build_dir}}/{{c}} > /dev/null
+  circom src/circuits/{{c}}.circom --r1cs --wasm --sym --output {{build_dir}}/{{c}} > /dev/null
   snarkjs r1cs info {{build_dir}}/{{c}}/{{c}}.r1cs > /dev/null
   snarkjs groth16 setup {{build_dir}}/{{c}}/{{c}}.r1cs {{powers_of_tau}} {{build_dir}}/{{c}}/init.zkey > /dev/null
   snarkjs zkey contribute {{build_dir}}/{{c}}/init.zkey {{build_dir}}/{{c}}/final.zkey --name="1st Contributor Name" -v -e="random text" > /dev/null
@@ -41,4 +42,4 @@ powers_of_tau := build_dir + "/" + powers_of_tau_filename
   [ -f {{powers_of_tau}} ] || wget {{powers_of_tau_url}} -O {{powers_of_tau}}
 
 @build-dir:
-  mkdir -p build verifiers
+  mkdir -p build/circom src/contracts/verifiers

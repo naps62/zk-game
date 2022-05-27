@@ -1,4 +1,4 @@
-name: Test circuits
+name: Test contracts (foundry)
 
 on:
   push:
@@ -16,7 +16,7 @@ on:
       - "test/circuits/**/*.ts"
 
 jobs:
-  circuits-test-suite:
+  foundry-test-suite:
     runs-on: ubuntu-latest
 
     env:
@@ -32,4 +32,4 @@ jobs:
           cache: "yarn"
 
       - run: yarn install --immutable
-      - run: yarn test:circuits
+      - run: yarn test:contracts

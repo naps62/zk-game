@@ -1,11 +1,19 @@
 circuits:
-  - any: ["packages/circuits/**/*"]
+  - any: ["src/circuits/**/*", "test/circuits/**/*", "yarn.lock"]
 
 contracts:
-  - any: ["packages/contracts/**/*"]
+  - any:
+      [
+        "src/contracts/**/*",
+        "test/foundry/**/*",
+        "foundry.toml",
+        "remappings.txt",
+        "hardhat.config.ts",
+        "yarn.lock",
+      ]
 
 frontend:
-  - any: ["packages/frontend/**/*"]
+  - any: ["src/web/**/*", "yarn.lock"]
 
-docs:
-  - any: ["**/*.md"]
+maintenance:
+  - any: ["**/*.md", ".gitignore", "Justfile"]
