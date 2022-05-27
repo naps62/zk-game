@@ -6,7 +6,7 @@
   "license": "MIT",
   "workspaces": {
     "packages": [
-      "packages/circuits"
+      "packages/*"
     ],
     "nohoist": [
       "**/@openzeppelin/**",
@@ -14,7 +14,7 @@
       "**/@typechain/**",
       "**/typechain/**",
       "**/typescript/**",
-      "**/ts-node/**",
+      "**/ts-node",
       "**/mocha/**",
       "@typescript-eslint/**",
       "concurrently"
