@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es2020",
-    "module": "commonjs",
+    "module": "esnext",
     "strict": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
@@ -13,8 +13,31 @@
     "isolatedModules": true,
     "outDir": "dist",
     "baseUrl": ".",
-    "typeRoots": ["./node_modules/@types", "./src/@types/"],
-    "types": ["mocha", "circom_tester", "ffjavascript"]
+    "jsx": "preserve",
+    "incremental": true,
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/@types/"
+    ],
+    "types": [
+      "mocha",
+      "circom_tester",
+      "ffjavascript"
+    ]
   },
-  "include": ["./src", "./test"]
+  "include": [
+    "./src",
+    "./test",
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

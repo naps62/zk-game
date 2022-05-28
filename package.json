@@ -13,17 +13,12 @@
     "@nomiclabs/hardhat-web3": "^2.0.0",
     "@typechain/ethers-v5": "^10.0.0",
     "@typechain/hardhat": "^6.0.0",
-    "@typescript-eslint/eslint-plugin": "^5.11.0",
-    "@typescript-eslint/parser": "^5.7.0",
-    "eslint": "^8.12.0",
-    "eslint-config-prettier": "^8.5.0",
     "ethers": "^5.6.0",
     "hardhat": "^2.9.2",
     "prettier": "^2.5.1",
     "prettier-plugin-solidity": "^1.0.0-beta.19",
     "solhint": "^3.3.7",
     "typechain": "^8.0.0",
-    "typescript": "^4.6.3",
     "@types/chai": "^4.3.1",
     "@types/mocha": "^9.1.1",
     "chai": "^4.3.6",
@@ -33,11 +28,29 @@
     "ffjavascript": "^0.2.54",
     "mocha": "^10.0.0",
     "snarkjs": "^0.4.19",
-    "ts-node": "^10.8.0"
+    "ts-node": "^10.8.0",
+    "next": "12.1.6",
+    "react": "18.1.0",
+    "react-dom": "18.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "17.0.36",
+    "@types/react": "18.0.9",
+    "@types/react-dom": "18.0.5",
+    "@typescript-eslint/eslint-plugin": "^5.11.0",
+    "@typescript-eslint/parser": "^5.7.0",
+    "eslint": "8.16.0",
+    "eslint-config-next": "12.1.6",
+    "eslint-config-prettier": "^8.5.0",
+    "typescript": "4.7.2"
   },
   "scripts": {
     "test": "mocha",
     "test:circuits": "mocha test/circuits/**/*.ts",
-    "test:contracts": "mocha test/contracts/**/*.ts"
+    "test:contracts": "mocha test/contracts/**/*.ts",
+    "web:dev": "next dev ./src/web",
+    "web:build": "next build ./src/web",
+    "web:start": "next start ./src/web",
+    "web:lint": "next lint ./src/web"
   }
 }
