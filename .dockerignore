@@ -1,0 +1,8 @@
+node_modules
+build
+.git
+.github
+.tool-versions
+README.md
+.gitmodules
+.gitignore

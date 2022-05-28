@@ -18,6 +18,7 @@ on:
 jobs:
   circuits-test-suite:
     runs-on: ubuntu-latest
+    container: naps62/circom:0.1.0
 
     env:
       FORCE_COLOR: true
@@ -32,5 +33,5 @@ jobs:
           cache: "yarn"
 
       # TODO make this work
-      # - run: yarn install --immutable
+      - run: yarn install --immutable
       # - run: # yarn test:circuits
