@@ -6,3 +6,4 @@ artifacts
 cache
 deployments/localhost
 src/contracts/verifiers
+src/web/.next

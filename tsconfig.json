@@ -11,10 +11,12 @@
     "noEmit": true,
     "moduleResolution": "node",
     "isolatedModules": true,
-    "outDir": "dist",
+    "outDir": "build/dist",
     "baseUrl": ".",
+    "incremental": true,
     "typeRoots": ["./node_modules/@types", "./src/@types/"],
     "types": ["mocha", "circom_tester", "ffjavascript"]
   },
-  "include": ["./src", "./test"]
+  "include": ["./src", "./test"],
+  "exclude": ["node_modules"]
 }
