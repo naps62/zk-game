@@ -14,7 +14,6 @@
     "outDir": "build/dist",
     "baseUrl": ".",
     "incremental": true,
-    "lib": ["dom", "dom.iterable", "esnext"],
     "typeRoots": ["./node_modules/@types", "./src/@types/"],
     "types": ["mocha", "circom_tester", "ffjavascript"]
   },
