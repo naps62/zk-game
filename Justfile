@@ -3,6 +3,8 @@ set positional-arguments
 build_dir := "./build/circom"
 verifier_dir := "./src/contracts/verifiers"
 
+alias t := test
+
 test:
   yarn run test
 
@@ -13,7 +15,6 @@ circom-compile:
 # Circom compilation
 #
 
-foo := if `[ $(stat -c %Y src/circuits) -gt $(stat -c %Y) ]` == `1` { "Good" } else { "Bad" }
 @compile c: build-dir powers-of-tau
   echo -n Compiling {{c}}.circom...
   mkdir -p {{build_dir}}/{{c}}

@@ -1,6 +1,5 @@
 import "@typechain/hardhat";
 import "@nomiclabs/hardhat-ethers";
-import "hardhat-deploy";
 
 const config = {
   solidity: {
@@ -11,9 +10,6 @@ const config = {
         runs: 300,
       },
     },
-  },
-  namedAccounts: {
-    deployer: 0,
   },
   typechain: {
     target: "ethers-v5",

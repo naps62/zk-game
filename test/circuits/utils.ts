@@ -14,7 +14,7 @@ use((_chai, utils) => {
   Assertion.addMethod("frEq", function (other) {
     const obj = utils.flag(this, "object");
 
-    expect(Fr.eq(Fr.e(obj), Fr.e(6))).to.be.true;
+    expect(Fr.eq(Fr.e(obj), Fr.e(other))).to.be.true;
   });
 });
 
